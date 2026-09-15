@@ -11,7 +11,7 @@ body.dark{--bg:#101010;--surface:#181818;--surface2:#222;--text:#f2f2ed;--muted:
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.65;transition:.25s}a{color:inherit;text-decoration:none}button{font:inherit}.container{width:min(1120px,90%);margin:auto}.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:999}
 .site-header{position:sticky;top:0;z-index:100;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{min-height:72px;display:flex;align-items:center;gap:28px}.brand{font-size:1.25rem;font-weight:900;letter-spacing:-.8px;margin-right:auto}.brand span{color:var(--accent)}.nav-links{display:flex;gap:24px;font-size:.84rem;font-weight:700}.nav-links a:hover{color:var(--accent)}.theme-btn,.menu-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer}.menu-btn{display:none}
 .hero{min-height:calc(100vh - 72px);display:flex;align-items:center;padding:80px 0;background:radial-gradient(circle at 75% 30%,rgba(199,155,90,.13),transparent 28%),var(--bg)}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:80px}.kicker,.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.72rem;font-weight:900;color:var(--accent)}.hero h1{font-size:clamp(3.5rem,8vw,7.2rem);line-height:.88;letter-spacing:-6px;margin:18px 0 28px}.hero h1 span{font-weight:400}.hero-text{max-width:650px;color:var(--muted);font-size:1.06rem}.actions{display:flex;gap:12px;margin:30px 0 42px;flex-wrap:wrap}.btn{padding:12px 20px;border-radius:4px;font-size:.84rem;font-weight:800;transition:.2s}.btn.primary{background:var(--dark);color:#fff}.btn.primary:hover{transform:translateY(-2px)}.btn.ghost{border:1px solid var(--line)}.btn.ghost:hover{border-color:var(--accent)}.mini-stats{display:flex;gap:35px;border-top:1px solid var(--line);padding-top:22px}.mini-stats div{display:grid;gap:2px}.mini-stats strong{font-size:.86rem}.mini-stats small{color:var(--muted);font-size:.7rem}
-.profile-wrap{position:relative;max-width:390px;justify-self:end}.photo-placeholder{aspect-ratio:4/5;background:var(--surface2);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:var(--shadow)}.initials{font-size:5rem;font-weight:900;letter-spacing:-5px;color:var(--accent)}.photo-placeholder p{color:var(--muted);font-size:.78rem}.floating-card{position:absolute;bottom:-25px;left:-35px;background:var(--surface);border:1px solid var(--line);padding:18px 20px;max-width:245px;box-shadow:var(--shadow)}.floating-card span{display:block;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-size:.62rem;font-weight:900;margin-bottom:5px}.floating-card strong{font-size:.84rem;line-height:1.35;display:block}
+.profile-wrap{position:relative;max-width:390px;justify-self:end}.photo-placeholder{aspect-ratio:4/5;background:var(--surface2);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:var(--shadow);overflow:hidden}.photo-placeholder img{width:100%;height:100%;object-fit:cover;display:block}.initials{font-size:5rem;font-weight:900;letter-spacing:-5px;color:var(--accent)}.photo-placeholder p{color:var(--muted);font-size:.78rem}.floating-card{position:absolute;bottom:-25px;left:-35px;background:var(--surface);border:1px solid var(--line);padding:18px 20px;max-width:245px;box-shadow:var(--shadow)}.floating-card span{display:block;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-size:.62rem;font-weight:900;margin-bottom:5px}.floating-card strong{font-size:.84rem;line-height:1.35;display:block}
 .section{padding:105px 0}.alt{background:var(--surface2)}.section-head{margin-bottom:45px}.section-head h2{font-size:clamp(2.2rem,5vw,4rem);line-height:1;letter-spacing:-2px;margin-top:7px}.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:80px}.lead{font-size:clamp(1.4rem,2.7vw,2.1rem);line-height:1.35;letter-spacing:-.6px}.about-side{color:var(--muted);max-width:470px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.chips span{border:1px solid var(--line);border-radius:99px;padding:7px 12px;font-size:.72rem;font-weight:800;color:var(--text)}
 .experience-card{background:var(--surface);border:1px solid var(--line);padding:42px;box-shadow:var(--shadow)}.exp-top{display:flex;justify-content:space-between;align-items:start;border-bottom:1px solid var(--line);padding-bottom:25px;margin-bottom:30px}.exp-top h3{font-size:2rem;margin-top:5px}.number,.project-no{color:var(--accent);font-weight:900;font-size:.75rem}.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.exp-grid p{font-size:1.05rem}.exp-grid ul{color:var(--muted);padding-left:20px}.exp-grid li{margin-bottom:8px}
 .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.project-card{border:1px solid var(--line);padding:40px;min-height:470px;display:flex;flex-direction:column}.project-card h3{font-size:2.25rem;letter-spacing:-1px;margin:35px 0 14px}.project-card>p:not(.eyebrow){color:var(--muted)}.dark-card{background:var(--dark);color:#fff;border-color:var(--dark)}.dark-card>p:not(.eyebrow),.dark-card .role span{color:#aaa}.role{margin-top:auto;padding-top:25px;border-top:1px solid var(--line);display:grid;gap:5px}.role strong{font-size:.72rem;text-transform:uppercase;letter-spacing:1.4px;color:var(--accent)}.role span{color:var(--muted);font-size:.82rem}.text-btn{margin-top:24px;width:max-content;border:0;background:none;color:var(--text);font-weight:900;font-size:.78rem;cursor:pointer;padding:0}.dark-card .text-btn{color:#fff}
@@ -22,12 +22,10 @@ body.dark{--bg:#101010;--surface:#181818;--surface2:#222;--text:#f2f2ed;--muted:
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;place-items:center;padding:20px;z-index:500}.modal.open{display:grid}.modal-panel{background:var(--surface);color:var(--text);width:min(620px,100%);padding:45px;position:relative}.modal-panel h2{font-size:2.2rem;margin:10px 0 15px}.modal-panel p:not(.kicker){color:var(--muted)}.close{position:absolute;right:18px;top:14px;border:0;background:none;color:var(--text);font-size:2rem;cursor:pointer}.reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.visible{opacity:1;transform:translateY(0)}
 @media(max-width:850px){.nav-links{display:none;position:absolute;top:72px;left:0;right:0;padding:20px 5%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;gap:16px}.nav-links.open{display:flex}.menu-btn{display:block}.hero-grid,.about-grid,.skills-layout,.contact-box,.exp-grid{grid-template-columns:1fr}.profile-wrap{justify-self:start;max-width:320px}.project-grid{grid-template-columns:1fr}.leadership-grid,.cert-grid{grid-template-columns:1fr 1fr}.hero{padding-top:55px}.hero h1{letter-spacing:-3px}}
 @media(max-width:560px){.section{padding:75px 0}.mini-stats{gap:18px;flex-wrap:wrap}.experience-card,.project-card,.contact-box{padding:28px}.leadership-grid,.cert-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:6px}footer .container{flex-direction:column;gap:5px}}
-
 </style>
 </head>
 <body>
 <div class="progress" id="progress"></div>
-
 <header class="site-header">
 <nav class="nav container">
 <a class="brand" href="#home">Ahmad<span>.</span></a>
@@ -39,7 +37,6 @@ body.dark{--bg:#101010;--surface:#181818;--surface2:#222;--text:#f2f2ed;--muted:
 <button class="theme-btn" id="themeBtn">◐</button>
 </nav>
 </header>
-
 <main>
 <section class="hero" id="home">
 <div class="container hero-grid">
@@ -51,92 +48,88 @@ body.dark{--bg:#101010;--surface:#181818;--surface2:#222;--text:#f2f2ed;--muted:
 <div class="mini-stats"><div><strong>Marketing</strong><small>Focus Area</small></div><div><strong>Research</strong><small>Primary Interest</small></div><div><strong>Leadership</strong><small>Strength</small></div></div>
 </div>
 <div class="profile-wrap reveal">
-<div class="photo-placeholder"><div class="initials">MAK</div><p>Professional photo<br>coming soon</p></div>
+<div class="photo-placeholder"><img src="photo.png" alt="Mohammad Ahmad Khan"></div>
 <div class="floating-card"><span>Currently</span><strong>Building skills in marketing & business strategy.</strong></div>
 </div>
 </div>
 </section>
-
 <section class="section" id="about"><div class="container">
 <div class="section-head reveal"><p class="kicker">01 · Profile</p><h2>About Me</h2></div>
 <div class="about-grid">
 <p class="lead reveal">During my internship at JAKSONS PVT LTD, I worked across marketing and inventory — handling market research, supporting sales, and managing inventory — which gave me a practical view of how marketing decisions connect to business operations.</p>
 <div class="about-side reveal"><p>I’m comfortable with Microsoft Office and Canva, and I’m especially interested in understanding consumer needs, market trends, and the strategies behind strong brands.</p><div class="chips"><span>Critical Thinker</span><span>Leader</span><span>Adaptable</span><span>Problem Solver</span></div></div>
 </div></div></section>
-
 <section class="section alt" id="experience"><div class="container">
 <div class="section-head reveal"><p class="kicker">02 · Experience</p><h2>Internship</h2></div>
 <article class="experience-card reveal"><div class="exp-top"><div><p class="eyebrow">6-Month Internship</p><h3>JAKSONS PVT LTD</h3></div><span class="number">01</span></div>
 <div class="exp-grid"><p>Developed practical knowledge of sales, marketing, customer handling, and business operations while supporting inventory management.</p>
 <ul><li>Conducted and supported market research.</li><li>Supported sales and customer-handling activities.</li><li>Tracked stock levels and maintained inventory records.</li><li>Coordinated stock movements and business operations.</li></ul></div></article>
 </div></section>
-
 <section class="section" id="projects"><div class="container">
 <div class="section-head reveal"><p class="kicker">03 · Selected Work</p><h2>Projects & Research</h2></div>
 <div class="project-grid">
 <article class="project-card reveal"><div class="project-no">01</div><p class="eyebrow">Product · Market Research</p><h3>Portable Air Pillow</h3><p>Developed a portable air pillow product concept by identifying consumer needs and working on product development, market research, positioning, and marketing strategy.</p>
 <div class="role"><strong>My role</strong><span>Identified product need · Market research · Target customers · Competitor analysis · Marketing strategy</span></div>
 <button class="text-btn" data-modal="airpillow">Project details ↗</button></article>
-<article class="project-card dark-card reveal"><div class="project-no">02</div><p class="eyebrow">Research · Luxury Market</p><h3>Luxury Leather Market</h3><p>Ongoing research into luxury market brand management, with a focus on pricing and premium positioning.</p>
-<div class="role"><strong>Current focus</strong><span>Luxury market analysis · Brand management · Pricing · Premium positioning</span></div>
-<button class="text-btn" data-modal="luxury">Research details ↗</button></article>
+<article class="project-card dark-card reveal"><div class="project-no">02</div><p class="eyebrow">Research · Luxury Market</p><h3>Luxury in India</h3><p>Explored how luxury brands position themselves in the Indian market, with attention to consumer behavior, premium positioning, and brand perception.</p>
+<div class="role"><strong>My role</strong><span>Market observation · Consumer insight · Brand positioning · Research analysis</span></div>
+<button class="text-btn" data-modal="luxury">Project details ↗</button></article>
 </div></div></section>
-
 <section class="section alt" id="skills"><div class="container">
-<div class="section-head reveal"><p class="kicker">04 · Capabilities</p><h2>Skills & Tools</h2></div>
-<div class="skills-layout"><div class="skill-list reveal">
-<div class="skill-row"><span>01</span><strong>Market Research</strong><i></i></div><div class="skill-row"><span>02</span><strong>Brand Management</strong><i></i></div>
-<div class="skill-row"><span>03</span><strong>Digital Marketing</strong><i></i></div><div class="skill-row"><span>04</span><strong>Business Analytics</strong><i></i></div>
-<div class="skill-row"><span>05</span><strong>Communication & Presentation</strong><i></i></div><div class="skill-row"><span>06</span><strong>Leadership & Problem-Solving</strong><i></i></div>
-</div><div class="tools reveal"><p class="eyebrow">Tools I Use</p><div class="tool-grid"><div>Canva</div><div>Excel</div><div>PowerPoint</div><div>Word</div></div></div></div>
-</div></section>
-
+<div class="section-head reveal"><p class="kicker">04 · Capabilities</p><h2>Skills</h2></div>
+<div class="skills-layout">
+<div class="skill-list reveal">
+<div class="skill-row"><span>01</span><strong>Market Research</strong><i></i></div>
+<div class="skill-row"><span>02</span><strong>Marketing Strategy</strong><i></i></div>
+<div class="skill-row"><span>03</span><strong>Brand Management</strong><i></i></div>
+<div class="skill-row"><span>04</span><strong>Sales & Customer Handling</strong><i></i></div>
+<div class="skill-row"><span>05</span><strong>Critical Thinking</strong><i></i></div>
+<div class="skill-row"><span>06</span><strong>Leadership</strong><i></i></div>
+</div>
+<div class="tools reveal"><p class="kicker">Tools</p><div class="tool-grid"><div>Microsoft Office</div><div>Canva</div><div>Excel</div><div>PowerPoint</div></div></div>
+</div></div></section>
 <section class="section" id="leadership"><div class="container">
-<div class="section-head reveal"><p class="kicker">05 · Leadership</p><h2>Leadership & Responsibility</h2></div>
+<div class="section-head reveal"><p class="kicker">05 · Leadership</p><h2>Leadership & Activities</h2></div>
 <div class="leadership-grid">
-<article class="simple-card reveal"><span class="card-index">01</span><h3>Secretary — Englitia Literature Club</h3><p>Organized and coordinated multiple college events and activities.</p></article>
-<article class="simple-card reveal"><span class="card-index">02</span><h3>Class Representative</h3><p>Coordinated classmates and acted as a communication link for class-related activities.</p></article>
-<article class="simple-card reveal"><span class="card-index">03</span><h3>Team Leader & Lead Researcher</h3><p>Led group assignments, competitions, the Air Pillow project team, and research for the luxury leather project.</p></article>
+<article class="simple-card reveal"><span class="card-index">01</span><h3>Team Collaboration</h3><p>Worked effectively with teams across academic and professional environments.</p></article>
+<article class="simple-card reveal"><span class="card-index">02</span><h3>Event Participation</h3><p>Actively participated in business, marketing, and academic activities.</p></article>
+<article class="simple-card reveal"><span class="card-index">03</span><h3>Adaptability</h3><p>Comfortable learning new tools and adapting to changing business requirements.</p></article>
 </div></div></section>
-
 <section class="section alt" id="education"><div class="container">
-<div class="section-head reveal"><p class="kicker">06 · Academic Background</p><h2>Education</h2></div>
-<div class="timeline">
-<div class="timeline-item reveal"><span>2025–2028</span><div><h3>Bachelor of Business Administration</h3><p>Allenhouse Business School</p></div></div>
-<div class="timeline-item reveal"><span>2024–2025</span><div><h3>Class XII — Commerce with IP</h3><p>Kendriya Vidyalaya Lalitpur</p></div></div>
-<div class="timeline-item reveal"><span>2022–2023</span><div><h3>Secondary School Education</h3><p>Kendriya Vidyalaya Lalitpur</p></div></div>
+<div class="section-head reveal"><p class="kicker">06 · Education</p><h2>Education & Certifications</h2></div>
+<div class="timeline reveal">
+<div class="timeline-item"><span>2024 — Present</span><div><h3>Allenhouse Business School</h3><p>Bachelor of Business Administration (BBA)</p></div></div>
+</div>
+<div class="cert-grid reveal">
+<div class="cert"><span>01</span><h3>Brand Management</h3><p>Certified coursework through college.</p></div>
+<div class="cert"><span>02</span><h3>Digital Marketing</h3><p>NPTEL certification.</p></div>
+<div class="cert"><span>03</span><h3>Product Management</h3><p>Coursework and ongoing learning.</p></div>
+<div class="cert"><span>04</span><h3>Google Skillshop</h3><p>Digital marketing learning.</p></div>
 </div></div></section>
-
-<section class="section" id="certifications"><div class="container">
-<div class="section-head reveal"><p class="kicker">07 · Learning</p><h2>Certifications</h2></div>
-<div class="cert-grid">
-<div class="cert reveal"><span>01</span><h3>Brand Management</h3><p>Allenhouse Business School</p></div><div class="cert reveal"><span>02</span><h3>Digital Marketing</h3><p>NPTEL</p></div>
-<div class="cert reveal"><span>03</span><h3>Product Management</h3><p>Certification</p></div><div class="cert reveal"><span>04</span><h3>Google Ads</h3><p>Google Skillshop</p></div>
+<section class="section" id="contact"><div class="container">
+<div class="contact-box reveal">
+<div><p class="kicker">07 · Contact</p><h2>Let’s connect.</h2><p>I’m open to internships, marketing opportunities, research collaborations, and conversations around business and brands.</p></div>
+<div class="contact-links"><a href="mailto:ahmadkhany69@gmail.com">ahmadkhany69@gmail.com</a><span>India</span><div class="socials"><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/ahmadconnects27" target="_blank" rel="noopener">GitHub ↗</a></div></div>
 </div></div></section>
-
-<section class="section contact-section" id="contact"><div class="container contact-box reveal">
-<div><p class="kicker">08 · Contact</p><h2>Let’s connect.</h2><p>Open to opportunities, conversations, and meaningful projects in marketing and business.</p></div>
-<div class="contact-links"><a href="mailto:ahmadkhany69@gmail.com">ahmadkhany69@gmail.com</a><a href="tel:+916306028924">+91 6306028924</a><span>Kanpur (UP), 208001</span>
-<div class="socials"><a href="#" aria-label="LinkedIn">LinkedIn</a><a href="#" aria-label="GitHub">GitHub</a><a href="#" aria-label="Website">Website</a></div></div>
-</div></section>
 </main>
-
-<footer><div class="container"><strong>Mohammad Ahmad Khan</strong><span>© <span id="year"></span> · Built for GitHub Pages</span></div></footer>
-
-<div class="modal" id="modal"><div class="modal-panel"><button class="close" id="closeModal">×</button><p class="kicker" id="modalKicker"></p><h2 id="modalTitle"></h2><p id="modalText"></p><div id="modalExtra"></div></div></div>
+<footer><div class="container"><span>© 2026 Mohammad Ahmad Khan</span><strong>Marketing · Research · Business</strong></div></footer>
+<div class="modal" id="airpillow"><div class="modal-panel"><button class="close" data-close>×</button><p class="kicker">Project 01</p><h2>Portable Air Pillow</h2><p>Product concept focused on identifying a practical consumer need, defining target customers, studying competitors, and creating a market positioning and marketing strategy.</p></div></div>
+<div class="modal" id="luxury"><div class="modal-panel"><button class="close" data-close>×</button><p class="kicker">Project 02</p><h2>Luxury in India</h2><p>Research exploring consumer perceptions and brand positioning in the Indian luxury market, with emphasis on premium value, differentiation, and customer behavior.</p></div></div>
 <script>
-const body=document.body,themeBtn=document.getElementById('themeBtn'),menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks'),progress=document.getElementById('progress');
-themeBtn.onclick=()=>{body.classList.toggle('dark');localStorage.setItem('theme',body.classList.contains('dark')?'dark':'light')};
-if(localStorage.getItem('theme')==='dark')body.classList.add('dark');
-menuBtn.onclick=()=>navLinks.classList.toggle('open');
-document.querySelectorAll('.nav-links a').forEach(a=>a.onclick=()=>navLinks.classList.remove('open'));
-window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;progress.style.width=(h?document.documentElement.scrollTop/h*100:0)+'%'});
-const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
-const modal=document.getElementById('modal'),closeModal=document.getElementById('closeModal'),title=document.getElementById('modalTitle'),kicker=document.getElementById('modalKicker'),text=document.getElementById('modalText'),extra=document.getElementById('modalExtra');
-const data={airpillow:{k:'Product · Market Research',t:'Portable Air Pillow',x:'A product concept developed around consumer needs, product development, market research, positioning, and marketing strategy.',e:'My contribution: Identified the product need, conducted market research, identified target customers, analyzed competitors, and helped develop the marketing strategy.'},luxury:{k:'Ongoing Research · Luxury Market',t:'Luxury Leather Market',x:'Current research focused on luxury-market brand management and maintaining premium value.',e:'Current focus: Luxury market analysis, brand management, pricing, and premium positioning.'}};
-document.querySelectorAll('[data-modal]').forEach(b=>b.onclick=()=>{let d=data[b.dataset.modal];kicker.textContent=d.k;title.textContent=d.t;text.textContent=d.x;extra.innerHTML='<p><strong>'+d.e+'</strong></p>';modal.classList.add('open')});
-function close(){modal.classList.remove('open')} closeModal.onclick=close;modal.onclick=e=>{if(e.target===modal)close()};document.onkeydown=e=>{if(e.key==='Escape')close()};document.getElementById('year').textContent=new Date().getFullYear();
-
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn?.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const themeBtn=document.getElementById('themeBtn');
+const savedTheme=localStorage.getItem('theme');
+if(savedTheme==='dark')document.body.classList.add('dark');
+themeBtn?.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light')});
+const progress=document.getElementById('progress');
+window.addEventListener('scroll',()=>{const h=document.documentElement;progress.style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%'});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('[data-modal]').forEach(btn=>btn.addEventListener('click',()=>document.getElementById(btn.dataset.modal)?.classList.add('open')));
+document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m||e.target.matches('[data-close]'))m.classList.remove('open')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'))});
 </script>
-</body></html>
+</body>
+</html>
