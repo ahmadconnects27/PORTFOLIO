@@ -40,9 +40,34 @@ footer{padding:23px 0;color:#849187;font: .62rem 'DM Mono';text-transform:upperc
 @keyframes portraitFloat{50%{transform:translateY(-12px)}}@keyframes orbitFloat{50%{transform:translateY(12px) rotate(20deg)}}
 @media(prefers-reduced-motion:reduce){.intro-screen{display:none}.intro-screen *,.hero .kicker,.hero h1,.hero-desc,.hero-actions,.hero-meta,.portrait-frame,.orbit{animation:none!important}}
 
+
+/* Custom cursor — desktop only */
+@media (pointer:fine) and (hover:hover){
+  body, a, button{cursor:none}
+  .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:2000;border-radius:50%;transform:translate(-50%,-50%);opacity:0}
+  .cursor-dot{width:6px;height:6px;background:var(--lime);opacity:1}
+  .cursor-ring{width:34px;height:34px;border:1px solid rgba(214,255,114,.75);opacity:1;transition:width .22s ease,height .22s ease,background .22s ease,border-color .22s ease}
+  .cursor-ring.hover{width:58px;height:58px;background:rgba(214,255,114,.12);border-color:var(--lime)}
+}
+.cursor-label{position:fixed;top:0;left:0;z-index:2001;pointer-events:none;font: .55rem 'DM Mono';letter-spacing:1px;color:var(--forest);background:var(--lime);padding:4px 7px;opacity:0;transform:translate(18px,18px);transition:opacity .2s}
+.cursor-label.show{opacity:1}
+.scroll-progress{position:fixed;z-index:1001;top:0;left:0;height:2px;width:0;background:var(--lime);pointer-events:none}
+html{scroll-behavior:smooth}
+.nav-wrap{transition:padding .3s ease,background .3s ease}
+.nav{transition:box-shadow .3s ease,border-color .3s ease}
+.nav-wrap.scrolled{padding:8px 0}
+.nav-wrap.scrolled .nav{box-shadow:0 10px 35px rgba(0,0,0,.22);border-color:rgba(214,255,114,.22)}
+.reveal{will-change:opacity,transform}
+.project,.credential,.metric,.btn,.contact-data a{transition:transform .28s cubic-bezier(.2,.8,.2,1),background-color .28s ease,border-color .28s ease,box-shadow .28s ease}
+.project:hover,.credential:hover{transform:translateY(-5px)}
+@media(pointer:coarse),(hover:none){.cursor-dot,.cursor-ring,.cursor-label{display:none}}
+@media(prefers-reduced-motion:reduce){.cursor-dot,.cursor-ring,.cursor-label{display:none!important}.nav-wrap,.nav,.project,.credential,.metric,.btn{transition:none!important}}
+
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div><div class="cursor-ring" id="cursorRing" aria-hidden="true"></div><div class="cursor-label" id="cursorLabel" aria-hidden="true">OPEN</div>
 <div class="intro-screen" id="introScreen" role="dialog" aria-label="Welcome to Mohammad Ahmad Khan's portfolio" aria-modal="true"><div class="intro-inner"><div class="intro-overline">Portfolio / 2026</div><div class="intro-name"><span>MOHAMMAD</span><span>AHMAD KHAN.</span></div><div class="intro-caption">Marketing · Creativity · Impact</div><div class="intro-progress" aria-hidden="true"><span></span></div></div><button class="intro-skip" id="introSkip" type="button">SKIP INTRO ↗</button></div>
 
 <header class="nav-wrap"><nav class="nav"><a class="logo" href="#home">AHMAD<span>®</span></a><div class="navlinks"><a href="#about">About</a><a href="#experience">Experience</a><a href="#work">Selected work</a><a href="#skills">Capabilities</a><a href="#education">Education</a></div><a class="contact-link" href="#contact">LET'S TALK ↗</a><button class="menu" id="menu" aria-label="Open menu">☰</button></nav></header>
@@ -71,5 +96,56 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!intro.classList.co
 
 const menu=document.querySelector('.menu'),navlinks=document.querySelector('.navlinks');menu.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');navlinks.style.cssText=open?'display:flex;position:absolute;top:65px;left:0;right:0;padding:20px;background:#17241d;border:1px solid rgba(255,255,255,.15);border-radius:18px;flex-direction:column;gap:18px':' ';menu.textContent=open?'×':'☰';});navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<851){navlinks.style.display='none';navlinks.classList.remove('open');menu.textContent='☰'}}));
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));document.getElementById('year').textContent=new Date().getFullYear();
+
+
+// Custom cursor: restrained follower ring, disabled for touch and reduced motion.
+(function(){
+  const finePointer=window.matchMedia('(pointer:fine) and (hover:hover)').matches;
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!finePointer||reduced)return;
+  const dot=document.getElementById('cursorDot');
+  const ring=document.getElementById('cursorRing');
+  const label=document.getElementById('cursorLabel');
+  let x=innerWidth/2,y=innerHeight/2,rx=x,ry=y,frame;
+  document.addEventListener('mousemove',e=>{
+    x=e.clientX;y=e.clientY;
+    dot.style.transform='translate3d('+x+'px,'+y+'px,0) translate(-50%,-50%)';
+    label.style.transform='translate3d('+(x+17)+'px,'+(y+17)+'px,0)';
+    dot.style.opacity='1';ring.style.opacity='1';
+  },{passive:true});
+  function follow(){
+    rx+=(x-rx)*.16;ry+=(y-ry)*.16;
+    ring.style.transform='translate3d('+rx+'px,'+ry+'px,0) translate(-50%,-50%)';
+    frame=requestAnimationFrame(follow);
+  }
+  follow();
+  document.querySelectorAll('a,button,.project,.credential').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{
+      ring.classList.add('hover');
+      if(el.matches('a,button')){label.classList.add('show');label.textContent=el.matches('a[href^="mailto:"]')?'EMAIL':'OPEN';}
+    });
+    el.addEventListener('mouseleave',()=>{ring.classList.remove('hover');label.classList.remove('show');});
+  });
+  document.addEventListener('mouseleave',()=>{dot.style.opacity='0';ring.style.opacity='0';label.classList.remove('show');});
+  document.addEventListener('mouseenter',()=>{dot.style.opacity='1';ring.style.opacity='1';});
+  window.addEventListener('pagehide',()=>cancelAnimationFrame(frame));
+})();
+
+// Scroll progress and compact navigation transition.
+(function(){
+  const bar=document.getElementById('scrollProgress');
+  const nav=document.querySelector('.nav-wrap');
+  let ticking=false;
+  function update(){
+    const max=document.documentElement.scrollHeight-innerHeight;
+    const progress=max>0?(scrollY/max)*100:0;
+    bar.style.width=progress+'%';
+    nav.classList.toggle('scrolled',scrollY>30);
+    ticking=false;
+  }
+  addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true;}},{passive:true});
+  update();
+})();
+
 </script>
 </body></html>
