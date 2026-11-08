@@ -108,14 +108,14 @@ h1 .dot{color:#b58b91}.btn.lime,.nav .contact-link{background:#b58b91;color:#100
 .cord-handle{animation:cordHint 1.8s ease-in-out infinite}
 .intro-screen.pulled .cord-handle{animation:none}
 @media(max-width:600px){.intro-instruction{top:340px;font-size:.55rem}.cord-zone{height:220px}.intro-signature{bottom:25px;font-size:.49rem;letter-spacing:1px}.intro-skip{bottom:18px}}
-@media(prefers-reduced-motion:reduce){.intro-screen{display:none}.cord-handle{animation:none}.intro-screen *{transition:none!important}}
+@media(prefers-reduced-motion:reduce){.cord-handle{animation:none}.intro-screen *{transition:none!important}}
 
 </style>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div><div class="cursor-ring" id="cursorRing" aria-hidden="true"></div><div class="cursor-label" id="cursorLabel" aria-hidden="true">OPEN</div>
-<div class="intro-screen" id="introScreen" role="dialog" aria-label="Pull the cord to enter Mohammad Ahmad Khan's portfolio" aria-modal="true">
+<div class="intro-screen" style="display:block;opacity:1;visibility:visible;pointer-events:auto" id="introScreen" role="dialog" aria-label="Pull the cord to enter Mohammad Ahmad Khan's portfolio" aria-modal="true">
   <div class="lamp-glow" id="lampGlow" aria-hidden="true"></div>
   <div class="ceiling-rose" aria-hidden="true"></div>
   <div class="bulb-wrap" id="bulbWrap" aria-hidden="true"><div class="bulb-cap"></div><div class="bulb-glass"></div></div>
