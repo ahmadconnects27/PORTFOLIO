@@ -22,9 +22,29 @@ footer{padding:23px 0;color:#849187;font: .62rem 'DM Mono';text-transform:upperc
 @media(max-width:850px){.navlinks,.contact-link{display:none}.menu{display:block}.hero-grid,.about-grid,.experience-card,.skills-layout,.contact-grid{grid-template-columns:1fr}.portrait-wrap{margin:15px auto 0;max-width:420px}.side-index{display:none}.section{padding:80px 0}.section-head{display:block}.section-head>p{margin-top:18px}.experience-card{gap:20px}.growth-band{grid-template-columns:1fr}.contact-grid{gap:35px}}
 @media(max-width:560px){.hero{padding-top:120px}.hero h1{font-size:4.1rem}.portrait-frame{height:430px}.orbit{right:-8px;width:90px;height:90px}.hero-meta{gap:18px}.hero-meta strong{font-size:1.3rem}.project-grid{grid-template-columns:1fr}.project{min-height:470px;padding:23px}.growth-band{padding:24px}.growth-stats{gap:6px}.growth-stats strong{font-size:1.5rem}.edu{grid-template-columns:1fr auto;gap:5px 12px}.edu .year{grid-column:1/-1}.edu .type{grid-column:2;grid-row:2}.credential-grid{grid-template-columns:1fr}.contact-grid h2{font-size:4.2rem}footer .wrap{display:block}footer span{display:block;margin-top:6px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee-track{animation:none}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+
+/* Cinematic profile introduction */
+.intro-screen{position:fixed;inset:0;z-index:1000;background:#0b120e;color:var(--cream);display:grid;place-items:center;overflow:hidden;transition:opacity .75s ease,visibility .75s ease}
+.intro-screen.done{opacity:0;visibility:hidden;pointer-events:none}
+.intro-screen:before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 50% 50%,rgba(214,255,114,.12),transparent 38%);animation:introGlow 4s ease-in-out infinite alternate}
+.intro-inner{position:relative;text-align:center;width:min(900px,90%)}.intro-overline{font: .65rem 'DM Mono';letter-spacing:4px;color:var(--lime);text-transform:uppercase;opacity:0;animation:introRise .7s .15s forwards}
+.intro-name{font:700 clamp(3.5rem,10vw,9rem)/.9 'Space Grotesk';letter-spacing:-.09em;margin:28px 0 20px;overflow:hidden}
+.intro-name span{display:block;transform:translateY(110%);animation:introSlide .95s .35s cubic-bezier(.2,.8,.2,1) forwards}.intro-name span:last-child{color:var(--lime);animation-delay:.58s}
+.intro-caption{font:.7rem 'DM Mono';letter-spacing:2px;text-transform:uppercase;color:#b5c5b3;opacity:0;animation:introRise .7s 1.2s forwards}
+.intro-progress{width:min(300px,75%);height:2px;background:#354334;margin:45px auto 0;overflow:hidden}.intro-progress span{display:block;height:100%;width:0;background:var(--lime);animation:introLoad 3.2s linear forwards}
+.intro-skip{position:absolute;right:5%;bottom:35px;background:transparent;color:#c8d4c4;border:1px solid #53614f;padding:9px 15px;font:.65rem 'DM Mono';letter-spacing:1px;cursor:pointer}
+@keyframes introSlide{to{transform:translateY(0)}}@keyframes introRise{to{opacity:1;transform:translateY(0)}}@keyframes introLoad{to{width:100%}}@keyframes introGlow{to{transform:scale(1.12)}}
+.hero .kicker{animation:heroEnter .8s .15s both}.hero h1{animation:heroEnter .9s .3s both}.hero-desc{animation:heroEnter .9s .5s both}.hero-actions{animation:heroEnter .9s .65s both}.hero-meta{animation:heroEnter .9s .8s both}
+@keyframes heroEnter{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.portrait-frame{animation:portraitFloat 6s ease-in-out infinite}.orbit{animation:orbitFloat 8s ease-in-out infinite}
+@keyframes portraitFloat{50%{transform:translateY(-12px)}}@keyframes orbitFloat{50%{transform:translateY(12px) rotate(20deg)}}
+@media(prefers-reduced-motion:reduce){.intro-screen{display:none}.intro-screen *,.hero .kicker,.hero h1,.hero-desc,.hero-actions,.hero-meta,.portrait-frame,.orbit{animation:none!important}}
+
 </style>
 </head>
 <body>
+<div class="intro-screen" id="introScreen" role="dialog" aria-label="Welcome to Mohammad Ahmad Khan's portfolio" aria-modal="true"><div class="intro-inner"><div class="intro-overline">Portfolio / 2026</div><div class="intro-name"><span>MOHAMMAD</span><span>AHMAD KHAN.</span></div><div class="intro-caption">Marketing · Creativity · Impact</div><div class="intro-progress" aria-hidden="true"><span></span></div></div><button class="intro-skip" id="introSkip" type="button">SKIP INTRO ↗</button></div>
+
 <header class="nav-wrap"><nav class="nav"><a class="logo" href="#home">AHMAD<span>®</span></a><div class="navlinks"><a href="#about">About</a><a href="#experience">Experience</a><a href="#work">Selected work</a><a href="#skills">Capabilities</a><a href="#education">Education</a></div><a class="contact-link" href="#contact">LET'S TALK ↗</a><button class="menu" id="menu" aria-label="Open menu">☰</button></nav></header>
 <main id="home">
 <section class="hero"><div class="wrap hero-grid"><div class="reveal"><div class="kicker">Independent thinker. Curious marketer.</div><h1>Ideas<br>into <span class="outline">impact</span><span class="dot">.</span></h1><p class="hero-desc">I’m Mohammad Ahmad Khan — a BBA Marketing student and Marketing Manager at Jaksons Pvt Ltd. I turn audience insights into content, campaigns and brand experiences that move people.</p><div class="hero-actions"><a class="btn lime" href="#work">Explore selected work ↗</a><a class="btn line" href="#contact">Get in touch</a></div><div class="hero-meta"><div><strong>1K</strong><span>Followers reached*</span></div><div><strong>14</strong><span>Days of growth*</span></div><div><strong>03</strong><span>Social platforms</span></div></div></div><div class="portrait-wrap reveal"><span class="side-index">KANPUR, INDIA · 2026</span><div class="portrait-frame"><img src="photo.png" alt="Portrait of Mohammad Ahmad Khan"><div class="portrait-tag">MOHAMMAD AHMAD KHAN / MARKETING</div></div><div class="orbit"><div><b>AK</b>CREATIVE<br>× STRATEGY</div></div></div></div></section>
@@ -38,6 +58,17 @@ footer{padding:23px 0;color:#849187;font: .62rem 'DM Mono';text-transform:upperc
 </main>
 <footer><div class="wrap"><span>© <span id="year"></span> MOHAMMAD AHMAD KHAN</span><span>MADE WITH INTENTION · KANPUR, INDIA</span></div></footer>
 <script>
+
+// The introduction plays once per browser tab; visitors can skip immediately.
+const intro=document.getElementById('introScreen');
+const skip=document.getElementById('introSkip');
+let introTimer;
+function finishIntro(){clearTimeout(introTimer);intro.classList.add('done');intro.setAttribute('aria-hidden','true');}
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || sessionStorage.getItem('ahmad-intro-seen')){finishIntro();}
+else{sessionStorage.setItem('ahmad-intro-seen','1');introTimer=setTimeout(finishIntro,3400);}
+skip.addEventListener('click',finishIntro);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!intro.classList.contains('done'))finishIntro();});
+
 const menu=document.querySelector('.menu'),navlinks=document.querySelector('.navlinks');menu.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');navlinks.style.cssText=open?'display:flex;position:absolute;top:65px;left:0;right:0;padding:20px;background:#17241d;border:1px solid rgba(255,255,255,.15);border-radius:18px;flex-direction:column;gap:18px':' ';menu.textContent=open?'×':'☰';});navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<851){navlinks.style.display='none';navlinks.classList.remove('open');menu.textContent='☰'}}));
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));document.getElementById('year').textContent=new Date().getFullYear();
 </script>
