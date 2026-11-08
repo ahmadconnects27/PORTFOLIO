@@ -84,6 +84,14 @@ h1 .dot{color:#b58b91}.btn.lime,.nav .contact-link{background:#b58b91;color:#100
 /* Pull-cord opening: the room begins in complete darkness. */
 
 /* Ensure the reveal state wins over the visible intro defaults above. */
+
+/* Keep the custom pointer visible above the full-screen intro and its rope. */
+@media (pointer:fine) and (hover:hover){
+  .cursor-dot,.cursor-ring{z-index:4001!important}
+  .cursor-dot{background:#f1eee9!important}
+  .cursor-ring{border-color:rgba(241,238,233,.78)!important}
+}
+
 .intro-screen.done{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
 
 .intro-screen{background:#030303;z-index:3000;display:block;opacity:1;visibility:visible;transition:opacity 1.1s ease,visibility 1.1s ease}
