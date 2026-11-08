@@ -86,6 +86,14 @@ h1 .dot{color:#b58b91}.btn.lime,.nav .contact-link{background:#b58b91;color:#100
 /* Ensure the reveal state wins over the visible intro defaults above. */
 
 /* Keep the custom pointer visible above the full-screen intro and its rope. */
+
+/* Reliable intro cursor: use the native pointer on the black opening screen. */
+body.intro-active{cursor:auto!important}
+body.intro-active .intro-screen,body.intro-active .intro-screen *{cursor:auto!important}
+body.intro-active #cordHandle{cursor:grab!important}
+body.intro-active #introSkip{cursor:pointer!important}
+.intro-screen.done{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+
 @media (pointer:fine) and (hover:hover){
   .cursor-dot,.cursor-ring{z-index:4001!important}
   .cursor-dot{background:#f1eee9!important}
@@ -124,7 +132,7 @@ h1 .dot{color:#b58b91}.btn.lime,.nav .contact-link{background:#b58b91;color:#100
 
 </style>
 </head>
-<body>
+<body class="intro-active">
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div><div class="cursor-ring" id="cursorRing" aria-hidden="true"></div><div class="cursor-label" id="cursorLabel" aria-hidden="true">OPEN</div>
 <div class="intro-screen" style="display:block;opacity:1;visibility:visible;pointer-events:auto" id="introScreen" role="dialog" aria-label="Pull the cord to enter Mohammad Ahmad Khan's portfolio" aria-modal="true">
@@ -161,10 +169,16 @@ const cord=document.getElementById('cordLine');
 const zone=document.getElementById('cordZone');
 let pulling=false,startY=0,pull=0,finished=false;
 function finishIntro(){
-  if(finished)return;finished=true;
+  if(finished)return;
+  finished=true;
   intro.classList.add('pulled');
   intro.setAttribute('aria-hidden','true');
-  setTimeout(()=>intro.classList.add('done'),950);
+  // Force the overlay out of the rendering tree after the bulb flash.
+  window.setTimeout(()=>{
+    intro.classList.add('done');
+    intro.style.setProperty('display','none','important');
+    document.body.classList.remove('intro-active');
+  },1200);
 }
 function moveCord(distance){
   pull=Math.max(0,Math.min(105,distance));
